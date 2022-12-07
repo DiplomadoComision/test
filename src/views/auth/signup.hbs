@@ -1,0 +1,404 @@
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card">
+      <div class="card-header pt-5">
+        <h4 class="text-center">
+          Registro Diplomado
+        </h4>
+      </div>
+      <img class=" mx-auto d-block logo m-6" src="/img/logo.png" alt="Logo" />
+      <div class="card-body">
+        <form action="/auth/signup" method="POST">
+          <div class="mb-3">
+            <label for="name">Nombres:</label>
+            <input
+            onkeypress="return soloLetras(event)" 
+            type="text" 
+            class="form-control" 
+            name="name" 
+            placeholder="Nombres" 
+            value="{{name}}" 
+            required/>
+          </div>
+          <div class="mb-3">
+            <label for="lastname">Apellidos:</label>
+            <input 
+            onkeypress="return soloLetras(event)" 
+            type="text" class="form-control" 
+            name="lastname" 
+            placeholder="Apellidos" 
+            value="{{lastname}}" 
+            required/>
+          </div>
+          <div class="mb-3">
+            <label for="email">Correo:</label>
+            <input 
+            type="email" 
+            class="form-control" 
+            name="email" 
+            placeholder="Email" 
+            value="{{email}}" 
+            required/>
+          </div>
+          <div class="mb-3">
+                <label for="tipo-documento">Tipo de Documento de identidad</label><br>
+                <select name="tipodocumento" id="tipodocumento" class="select" value="{{tipodocumento}}" required>
+                  <option value="">Selecciona la respuesta</option>
+                  <option value="CC">CC. CEDULA DE CIUDADANIA</option>
+                  <option value="CE">CE. CEDULA DE EXTRANJERIA</option>
+                  <option value="NIP">NIP. NUMERO DE IDENTIFICACION PERSONAL</option>
+                  <option value="NIT">NIT. NUMERO DE IDENTIFICACION TRIBUTARIA </option>
+                  <option value="TI">TI. TARJETA DE IDENTIDAD</option>
+                  <option value="PAP">PAP. PASAPORTE</option>
+                </select>
+              </div>
+          <div class="mb-3">
+            <label for="password">Número de documento de identidad</label>
+            <input 
+            type="number" 
+            min="0" 
+            class="form-control" 
+            name="password" 
+            placeholder="No." 
+            value="{{password}}" 
+            required/>
+          </div>
+          <div class="mb-3">
+            <label for="confirm_password">Cofirmar Número de documento de identidad:</label>
+            <input 
+            type="number" 
+            class="form-control " 
+            name="confirm_password" 
+            placeholder="No."
+            value="{{confirm_password}}" 
+            required/>
+          </div>
+          <div class="mb-3">
+            <label for="estado">Es usted:</label><br>
+            <select name="estado" id="estado"class="select" value="{{estado}}" required >
+              <option value="none">Selecciona la respuesta</option>
+              <option value="abogado">Abogado</option>
+              <option value="estudiante">Estudiante</option>
+            </select>
+          </div>
+            <div name="abogado" Style="display:none">
+              <div class="mb-3">
+                <label for="tarjeta">Digite número de tarjeta profesional o licencia temporal</label>
+                <input type="number" min="0" class="form-control" name="tarjeta" placeholder="No." value="{{tarjeta}}"/>
+              </div>
+
+              <div class="mb-3">
+                <label for="uni-egresados">¿Cuál es la universidad de donde es egresado?</label>
+                <select name="uegresados" id="uegresados" class="select" value="{{uegresados}}">
+                  <option value="none">Selecciona la respuesta</option>
+                  <option value="Universidad Libre">Universidad Libre</option>
+                  <option value="Universidad de Boyacá">Universidad de Boyacá</option>
+                  <option value="Corporación universitaria Americana">Corporación universitaria Americana</option>
+                  <option value="Fundación universitaria del área andina">Fundación universitaria del área andina
+                  </option>
+                  <option value="Universidad autónoma de Colombia">Universidad autónoma de Colombia</option>
+                  <option value="Corporación Universitaria del Caribe - CECAR">Corporación Universitaria del Caribe -
+                    CECAR</option>
+                  <option value="Universidad cooperativa de Colombia ">Universidad cooperativa de Colombia </option>
+                  <option value="Corporación Universitaria comfacauca ">Corporación Universitaria comfacauca </option>
+                  <option value="Corporación Universitaria Remington ">Corporación Universitaria Remington </option>
+                  <option value="Corporación Universitaria Alexander Von Humboldt ">Corporación Universitaria Alexander
+                    Von Humboldt </option>
+                  <option value="Corporación Universitaria de Ciencia y Desarrollo - UNICIENCIA ">Corporación
+                    Universitaria de Ciencia y Desarrollo - UNICIENCIA </option>
+                  <option value="Corporación Universitaria de Colombia IDEAS ">Corporación Universitaria de Colombia
+                    IDEAS </option>
+                  <option value="Corporación universitaria del Caribe Iafic ">Corporación universitaria del Caribe Iafic
+                  </option>
+                  <option value="Corporación universitaria del meta ">Corporación universitaria del meta </option>
+                  <option value="Corporación universitaria republicana ">Corporación universitaria republicana </option>
+                  <option value="Universidad Francisco de Paula Santander ">Universidad Francisco de Paula Santander
+                  </option>
+                  <option value="Fundación Universitaria Claretiana ">Fundación Universitaria Claretiana </option>
+                  <option value="Fundación Universitaria de San Gil - UNISANGIL ">Fundación Universitaria de San Gil -
+                    UNISANGIL </option>
+                  <option value="Fundación universitaria los Libertadores ">Fundación universitaria los Libertadores
+                  </option>
+                  <option value="Institución Universitaria de Colombia ">Institución Universitaria de Colombia </option>
+                  <option value="Institución Universitaria de Envigado- IUE ">Institución Universitaria de Envigado- IUE
+                  </option>
+                  <option value="Pontificia Universidad Javeriana ">Pontificia Universidad Javeriana </option>
+                  <option value="Fundación Universitaria Navarra - Uninavarra ">Fundación Universitaria Navarra -
+                    Uninavarra </option>
+                  <option value="IEXE Universidad (México) ">IEXE Universidad (México) </option>
+                  <option value="Universidad La Gran Colombia ">Universidad La Gran Colombia </option>
+                  <option value="Universidad de San Buenaventura ">Universidad de San Buenaventura </option>
+                  <option value="Universidad Santiago de Cali ">Universidad Santiago de Cali </option>
+                  <option value="Universidad Santo Tomás ">Universidad Santo Tomás </option>
+                  <option value="Universidad Sergio Arboleda ">Universidad Sergio Arboleda </option>
+                  <option value="Universidad Católica San Antonio de Murcia – UCAM (España) ">Universidad Católica San
+                    Antonio de Murcia – UCAM (España) </option>
+                  <option value="Unidad Central del Valle del Cauca - UCEVA ">Unidad Central del Valle del Cauca - UCEVA
+                  </option>
+                  <option value="Universidad Católica de Oriente- UCO ">Universidad Católica de Oriente- UCO </option>
+                  <option value="Universidad de Ciencias Aplicadas y Ambientales - UDCA ">Universidad de Ciencias
+                    Aplicadas y Ambientales - UDCA </option>
+                  <option value="Universidad de Antioquia- UDEA ">Universidad de Antioquia- UDEA </option>
+                  <option value="Universidad de Santander - UDES ">Universidad de Santander - UDES </option>
+                  <option value="Universidad Industrial de Santander -UIS ">Universidad Industrial de Santander -UIS
+                  </option>
+                  <option value="Universidad Militar Nueva Granada - UMNG ">Universidad Militar Nueva Granada - UMNG
+                  </option>
+                  <option value="Universidad Autónoma de Bucaramanga – UNAB ">Universidad Autónoma de Bucaramanga – UNAB
+                  </option>
+                  <option value="Universidad Autónoma Latinoamericana - UNAULA ">Universidad Autónoma Latinoamericana -
+                    UNAULA </option>
+                  <option value="Fundación Universitaria Cervantes San Agustín - UNICERVANTES ">Fundación Universitaria
+                    Cervantes San Agustín - UNICERVANTES </option>
+                  <option value="Fundación Universitaria Colombo Internacional - UNICOLOMBO ">Fundación Universitaria
+                    Colombo Internacional - UNICOLOMBO </option>
+                  <option value="Corporación Universitaria de Sabaneta - Unisabaneta ">Corporación Universitaria de
+                    Sabaneta - Unisabaneta </option>
+                  <option value="Fundación Universitaria de San Gil - Unisangil ">Fundación Universitaria de San Gil -
+                    Unisangil </option>
+                  <option value="Universidad del Sinú - UNISINU ">Universidad del Sinú - UNISINU </option>
+                  <option value="Universidad de Ibagué ">Universidad de Ibagué </option>
+                  <option value="Universidad Católica de Colombia ">Universidad Católica de Colombia </option>
+                  <option value="Universidad Católica Luis Amigó ">Universidad Católica Luis Amigó </option>
+                  <option value="Centro de Estudios Superiores María Goretti - CESMAG ">Centro de Estudios Superiores
+                    María Goretti - CESMAG </option>
+                  <option value="Universidad Colegio Mayor de Cundinamarca ">Universidad Colegio Mayor de Cundinamarca
+                  </option>
+                  <option value="Universidad Caldas ">Universidad Caldas </option>
+                  <option value="Universidad de Cartagena ">Universidad de Cartagena </option>
+                  <option value="Universidad de Córdoba ">Universidad de Córdoba </option>
+                  <option value="Universidad de la Amazonia ">Universidad de la Amazonia </option>
+                  <option value="Universidad de la costa - CUC ">Universidad de la costa - CUC </option>
+                  <option value="Universidad de la Guajira ">Universidad de la Guajira </option>
+                  <option value="Universidad de los Andes ">Universidad de los Andes </option>
+                  <option value="Universidad de Sucre ">Universidad de Sucre </option>
+                  <option value="Universidad del Atlántico ">Universidad del Atlántico </option>
+                  <option value="Universidad del Cauca ">Universidad del Cauca </option>
+                  <option value="Universidad del Magdalena ">Universidad del Magdalena </option>
+                  <option value="Universidad El Bosque ">Universidad El Bosque </option>
+                  <option value="Universidad Externado de Colombia ">Universidad Externado de Colombia </option>
+                  <option value="Instituto Colombiano de Estudios Superiores de Incolda - ICESI ">Instituto Colombiano
+                    de Estudios Superiores de Incolda - ICESI </option>
+                  <option value="Universidad Mariana ">Universidad Mariana </option>
+                  <option value="Universidad Pontificia Bolivariana - UPB ">Universidad Pontificia Bolivariana - UPB
+                  </option>
+                  <option value="Universidad Popular del Cesar ">Universidad Popular del Cesar </option>
+                  <option value="Universidad Simón Bolívar- USB ">Universidad Simón Bolívar- USB </option>
+                  <option value="Universidad del Sur de Colombia - USCO ">Universidad del Sur de Colombia - USCO
+                  </option>
+                  <option value="Universidad Tecnológica de Bolívar -UTB ">Universidad Tecnológica de Bolívar -UTB
+                  </option>
+                  <option value="Fundación Universitaria Juan De Castellanos ">Fundación Universitaria Juan De
+                    Castellanos </option>
+                  <option value="Fundación universitaria de Popayán ">Fundación universitaria de Popayán </option>
+                  <option value="Fundación Tecnológica Autónoma de Bogotá ">Fundación Tecnológica Autónoma de Bogotá
+                  </option>
+                  <option value="Fundación Universidad Autónoma de Colombia ">Fundación Universidad Autónoma de Colombia
+                  </option>
+                  <option value="Fundación Universitaria Agraria de Colombia ">Fundación Universitaria Agraria de
+                    Colombia </option>
+                  <option value="Fundación Universitaria San Martín ">Fundación Universitaria San Martín </option>
+                  <option value="Politécnico Grancolombiano ">Politécnico Grancolombiano </option>
+                  <option value="Universidad Antonio Nariño ">Universidad Antonio Nariño </option>
+                  <option value="Universidad Católica de Colombia ">Universidad Católica de Colombia </option>
+                  <option value="Universidad de La Sabana ">Universidad de La Sabana </option>
+                  <option value="Universidad INCCA de Colombia ">Universidad INCCA de Colombia </option>
+                  <option value="Universidad Manuela Beltrán ">Universidad Manuela Beltrán </option>
+                  <option value="otro">Otro </option>
+                </select>
+              </div>
+              <div class="mb-3" name ="abogadou" Style="display:none">
+                <label for="abogadou">Digite su respuesta:</label>
+                <input 
+                  onkeypress="return soloLetras(event)" 
+                  type="text" 
+                  class="form-control" 
+                  name="uniegre" 
+                  placeholder="Universidad" 
+                  value="{{uniegre}}"
+                />
+          </div>    
+            </div>
+            <div name="estudiante" Style="display:none">
+              <div class="mb-3">
+                <label for="semestre">¿Semestre cursando actualmente?</label><br>
+                <select name="semestre" id="semestre" class="select" value="{{semestre}}" >
+                  <option value="">Selecciona la respuesta</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="uniEstu">¿En qué universidad estudia?</label>
+                <select name="uniEstu" id="uniEstudia" class="select" value="{{uniEstu}}">
+                  <option value="none">Selecciona la respuesta</option>
+                  <option value="Universidad Libre">Universidad Libre</option>
+                  <option value="Universidad de Boyacá">Universidad de Boyacá</option>
+                  <option value="Corporación universitaria Americana">Corporación universitaria Americana</option>
+                  <option value="Fundación universitaria del área andina">Fundación universitaria del área andina
+                  </option>
+                  <option value="Universidad autónoma de Colombia">Universidad autónoma de Colombia</option>
+                  <option value="Corporación Universitaria del Caribe - CECAR">Corporación Universitaria del Caribe -
+                    CECAR</option>
+                  <option value="Universidad cooperativa de Colombia ">Universidad cooperativa de Colombia </option>
+                  <option value="Corporación Universitaria comfacauca ">Corporación Universitaria comfacauca </option>
+                  <option value="Corporación Universitaria Remington ">Corporación Universitaria Remington </option>
+                  <option value="Corporación Universitaria Alexander Von Humboldt ">Corporación Universitaria Alexander
+                    Von Humboldt </option>
+                  <option value="Corporación Universitaria de Ciencia y Desarrollo - UNICIENCIA ">Corporación
+                    Universitaria de Ciencia y Desarrollo - UNICIENCIA </option>
+                  <option value="Corporación Universitaria de Colombia IDEAS ">Corporación Universitaria de Colombia
+                    IDEAS </option>
+                  <option value="Corporación universitaria del Caribe Iafic ">Corporación universitaria del Caribe Iafic
+                  </option>
+                  <option value="Corporación universitaria del meta ">Corporación universitaria del meta </option>
+                  <option value="Corporación universitaria republicana ">Corporación universitaria republicana </option>
+                  <option value="Universidad Francisco de Paula Santander ">Universidad Francisco de Paula Santander
+                  </option>
+                  <option value="Fundación Universitaria Claretiana ">Fundación Universitaria Claretiana </option>
+                  <option value="Fundación Universitaria de San Gil - UNISANGIL ">Fundación Universitaria de San Gil -
+                    UNISANGIL </option>
+                  <option value="Fundación universitaria los Libertadores ">Fundación universitaria los Libertadores
+                  </option>
+                  <option value="Institución Universitaria de Colombia ">Institución Universitaria de Colombia </option>
+                  <option value="Institución Universitaria de Envigado- IUE ">Institución Universitaria de Envigado- IUE
+                  </option>
+                  <option value="Pontificia Universidad Javeriana ">Pontificia Universidad Javeriana </option>
+                  <option value="Fundación Universitaria Navarra - Uninavarra ">Fundación Universitaria Navarra -
+                    Uninavarra </option>
+                  <option value="IEXE Universidad (México) ">IEXE Universidad (México) </option>
+                  <option value="Universidad La Gran Colombia ">Universidad La Gran Colombia </option>
+                  <option value="Universidad de San Buenaventura ">Universidad de San Buenaventura </option>
+                  <option value="Universidad Santiago de Cali ">Universidad Santiago de Cali </option>
+                  <option value="Universidad Santo Tomás ">Universidad Santo Tomás </option>
+                  <option value="Universidad Sergio Arboleda ">Universidad Sergio Arboleda </option>
+                  <option value="Universidad Católica San Antonio de Murcia – UCAM (España) ">Universidad Católica San
+                    Antonio de Murcia – UCAM (España) </option>
+                  <option value="Unidad Central del Valle del Cauca - UCEVA ">Unidad Central del Valle del Cauca - UCEVA
+                  </option>
+                  <option value="Universidad Católica de Oriente- UCO ">Universidad Católica de Oriente- UCO </option>
+                  <option value="Universidad de Ciencias Aplicadas y Ambientales - UDCA ">Universidad de Ciencias
+                    Aplicadas y Ambientales - UDCA </option>
+                  <option value="Universidad de Antioquia- UDEA ">Universidad de Antioquia- UDEA </option>
+                  <option value="Universidad de Santander - UDES ">Universidad de Santander - UDES </option>
+                  <option value="Universidad Industrial de Santander -UIS ">Universidad Industrial de Santander -UIS
+                  </option>
+                  <option value="Universidad Militar Nueva Granada - UMNG ">Universidad Militar Nueva Granada - UMNG
+                  </option>
+                  <option value="Universidad Autónoma de Bucaramanga – UNAB ">Universidad Autónoma de Bucaramanga – UNAB
+                  </option>
+                  <option value="Universidad Autónoma Latinoamericana - UNAULA ">Universidad Autónoma Latinoamericana -
+                    UNAULA </option>
+                  <option value="Fundación Universitaria Cervantes San Agustín - UNICERVANTES ">Fundación Universitaria
+                    Cervantes San Agustín - UNICERVANTES </option>
+                  <option value="Fundación Universitaria Colombo Internacional - UNICOLOMBO ">Fundación Universitaria
+                    Colombo Internacional - UNICOLOMBO </option>
+                  <option value="Corporación Universitaria de Sabaneta - Unisabaneta ">Corporación Universitaria de
+                    Sabaneta - Unisabaneta </option>
+                  <option value="Fundación Universitaria de San Gil - Unisangil ">Fundación Universitaria de San Gil -
+                    Unisangil </option>
+                  <option value="Universidad del Sinú - UNISINU ">Universidad del Sinú - UNISINU </option>
+                  <option value="Universidad de Ibagué ">Universidad de Ibagué </option>
+                  <option value="Universidad Católica de Colombia ">Universidad Católica de Colombia </option>
+                  <option value="Universidad Católica Luis Amigó ">Universidad Católica Luis Amigó </option>
+                  <option value="Centro de Estudios Superiores María Goretti - CESMAG ">Centro de Estudios Superiores
+                    María Goretti - CESMAG </option>
+                  <option value="Universidad Colegio Mayor de Cundinamarca ">Universidad Colegio Mayor de Cundinamarca
+                  </option>
+                  <option value="Universidad Caldas ">Universidad Caldas </option>
+                  <option value="Universidad de Cartagena ">Universidad de Cartagena </option>
+                  <option value="Universidad de Córdoba ">Universidad de Córdoba </option>
+                  <option value="Universidad de la Amazonia ">Universidad de la Amazonia </option>
+                  <option value="Universidad de la costa - CUC ">Universidad de la costa - CUC </option>
+                  <option value="Universidad de la Guajira ">Universidad de la Guajira </option>
+                  <option value="Universidad de los Andes ">Universidad de los Andes </option>
+                  <option value="Universidad de Sucre ">Universidad de Sucre </option>
+                  <option value="Universidad del Atlántico ">Universidad del Atlántico </option>
+                  <option value="Universidad del Cauca ">Universidad del Cauca </option>
+                  <option value="Universidad del Magdalena ">Universidad del Magdalena </option>
+                  <option value="Universidad El Bosque ">Universidad El Bosque </option>
+                  <option value="Universidad Externado de Colombia ">Universidad Externado de Colombia </option>
+                  <option value="Instituto Colombiano de Estudios Superiores de Incolda - ICESI ">Instituto Colombiano
+                    de Estudios Superiores de Incolda - ICESI </option>
+                  <option value="Universidad Mariana ">Universidad Mariana </option>
+                  <option value="Universidad Pontificia Bolivariana - UPB ">Universidad Pontificia Bolivariana - UPB
+                  </option>
+                  <option value="Universidad Popular del Cesar ">Universidad Popular del Cesar </option>
+                  <option value="Universidad Simón Bolívar- USB ">Universidad Simón Bolívar- USB </option>
+                  <option value="Universidad del Sur de Colombia - USCO ">Universidad del Sur de Colombia - USCO
+                  </option>
+                  <option value="Universidad Tecnológica de Bolívar -UTB ">Universidad Tecnológica de Bolívar -UTB
+                  </option>
+                  <option value="Fundación Universitaria Juan De Castellanos ">Fundación Universitaria Juan De
+                    Castellanos </option>
+                  <option value="Fundación universitaria de Popayán ">Fundación universitaria de Popayán </option>
+                  <option value="Fundación Tecnológica Autónoma de Bogotá ">Fundación Tecnológica Autónoma de Bogotá
+                  </option>
+                  <option value="Fundación Universidad Autónoma de Colombia ">Fundación Universidad Autónoma de Colombia
+                  </option>
+                  <option value="Fundación Universitaria Agraria de Colombia ">Fundación Universitaria Agraria de
+                    Colombia </option>
+                  <option value="Fundación Universitaria San Martín ">Fundación Universitaria San Martín </option>
+                  <option value="Politécnico Grancolombiano ">Politécnico Grancolombiano </option>
+                  <option value="Universidad Antonio Nariño ">Universidad Antonio Nariño </option>
+                  <option value="Universidad Católica de Colombia ">Universidad Católica de Colombia </option>
+                  <option value="Universidad de La Sabana ">Universidad de La Sabana </option>
+                  <option value="Universidad INCCA de Colombia ">Universidad INCCA de Colombia </option>
+                  <option value="Universidad Manuela Beltrán ">Universidad Manuela Beltrán </option>
+                  <option value="otro">Otro </option>
+                </select>
+              </div>
+
+              <div class="mb-3" name ="estudiau" Style="display:none">
+                <label for="uniEstudia">Digite su respuesta:</label>
+                <input 
+                  onkeypress="return soloLetras(event)" 
+                  type="text" 
+                  class="form-control" 
+                  name="uniestu" 
+                  placeholder="Universidad" 
+                  value="{{uniestu}}" 
+                />
+          </div>
+            </div>
+          <div class="mb-3">
+            <label for="pais">País de residencia:</label>
+            <input
+            onkeypress="return soloLetras(event)"
+            type="text" 
+            class="form-control" 
+            name="pais" 
+            placeholder="País" 
+            value="{{pais}}" 
+            style="text-transform:uppercase;"
+            required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="ciudad">Ciudad de residencia:</label>
+            <input 
+            onkeypress="return soloLetras(event)"
+            type="text" 
+            class="form-control" 
+            name="ciudad" 
+            placeholder="Ciudad" 
+            value="{{ciudad}}" 
+            style="text-transform:uppercase;"
+            required/>
+          </div>
+          <button class="btn btn-success btn-block">
+            Enviar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

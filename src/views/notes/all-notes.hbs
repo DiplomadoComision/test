@@ -1,0 +1,41 @@
+
+<div class="row">
+  
+        
+        <table id="tabla" class="table">
+                <thead>
+                  <tr>
+                      <th >Nombres</th>
+                      <th >Apellidos</th>
+                      <th >Correo</th>
+                      <th >Numero ID</th>
+                      <th >Es usted:</th>
+                      <th >Numero tarjeta</th>
+                      <th >¿Cuál es la universidad de donde es egresado?</th>
+                      <th >¿Semestre cursando actualmente?</th>
+                      <th >¿En qué universidad estudia?</th>
+                      <th >País</th>
+                      <th >Ciudad</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each user}}
+                    <tr>
+                    
+                      <td>{{ name }}</td>
+                      <td>{{ lastname }}</td>
+                      <td>{{ email }}</td>
+                      <td>{{ password }}</td>
+                      <td>{{ estado }}</td>
+                      <td>{{ tarjeta }}</td>
+                      <td>{{ uegresados }}</td>
+                      <td>{{ semestre }}</td>
+                      <td>{{ uniEstu }}</td>
+                      <td>{{ pais }}</td>
+                      <td>{{ ciudad }}</td>
+                  
+                    </tr>
+                  {{/each}}
+                </tbody>      
+        </table>
+</div>
